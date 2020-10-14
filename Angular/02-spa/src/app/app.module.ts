@@ -15,7 +15,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HousesComponent } from './components/houses/houses.component';
-import { from } from 'rxjs';
+import { HousesCardComponent } from './components/houses-card/houses-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { from } from 'rxjs';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    HousesComponent
+    HousesComponent,
+    HousesCardComponent
   ],
   imports: [
     BrowserModule,

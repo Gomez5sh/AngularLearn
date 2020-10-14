@@ -76,6 +76,11 @@ export class HousesService {
     getHouses(): Houses[] {
         return this.houses;
     }
+
+    // tslint:disable-next-line: typedef
+    getHouse( idx: string ){
+      return this.houses[idx];
+    }
 }
 export interface Houses{
   house: string;
