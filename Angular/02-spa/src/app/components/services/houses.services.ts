@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HousesCardComponent } from '../houses-card/houses-card.component';
 
 @Injectable()
 export class HousesService {
@@ -80,6 +81,22 @@ export class HousesService {
     // tslint:disable-next-line: typedef
     getHouse( idx: string ){
       return this.houses[idx];
+    }
+
+    searchHouse( text: string): Houses[]{
+      const housesArr: Houses[] = [];
+      text = text.toLowerCase();
+
+      for ( const house of this.houses ) {
+
+        const name = house.house.toLowerCase();
+
+        if ( name.indexOf( text ) >= 0 ){
+          housesArr.push(house);
+        }
+      }
+
+      return housesArr;
     }
 }
 export interface Houses{
