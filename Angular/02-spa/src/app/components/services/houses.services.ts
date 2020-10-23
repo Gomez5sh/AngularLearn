@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HousesCardComponent } from '../houses-card/houses-card.component';
 
 @Injectable()
 export class HousesService {
@@ -83,20 +82,21 @@ export class HousesService {
       return this.houses[idx];
     }
 
-    searchHouse( text: string): Houses[]{
-      const housesArr: Houses[] = [];
-      text = text.toLowerCase();
+    searchHouse( termino: string): Houses[]{
+      // tslint:disable-next-line: prefer-const
+      let houseArr: Houses[] = [];
+      termino = termino.toLowerCase();
 
-      for ( const house of this.houses ) {
-
-        const name = house.house.toLowerCase();
-
-        if ( name.indexOf( text ) >= 0 ){
-          housesArr.push(house);
+      // tslint:disable-next-line: prefer-const
+      for ( let house of this.houses ){
+        // tslint:disable-next-line: prefer-const
+        let name = house.house.toLowerCase();
+        if ( name.indexOf( termino ) >= 0){
+          houseArr.push( house );
         }
-      }
 
-      return housesArr;
+      }
+      return houseArr;
     }
 }
 export interface Houses{

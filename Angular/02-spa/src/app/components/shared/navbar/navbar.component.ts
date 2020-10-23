@@ -7,14 +7,15 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( private router: Router ) { }
-
-  ngOnInit(): void {
-  }
-
+  constructor( private router: Router) { }
 
   // tslint:disable-next-line: typedef
-  searchHouse( text: string ){
-    this.router.navigate( ['/search', text] );
+  ngOnInit() {
   }
+
+  // tslint:disable-next-line: typedef
+  searchHouse( termino: string) {
+    this.router.navigate(['/search', termino]);
+  }
+
 }

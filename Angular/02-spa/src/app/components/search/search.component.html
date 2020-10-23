@@ -1,14 +1,14 @@
-<h1 class="animated fadeIn"> <small style="font-size: 20px"> <i>Founder  </i></small></h1>
+<h1 class="animates fadeIn fast">Search:  <small>{{ termino }}</small></h1>
 <hr>
-<div class="row animated fadeIn fast">
-    <div class="col-md-4">
-        <img [src]="" class="img-fluid" alt="house.house">
-        <br><br>
-        <a [routerLink]="['/search']" class="btn btn-outline-primary btn-block">Back</a>
+
+<div class="row animated fadeIn fast" *ngIf="houses.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      There are no results with the term: {{ termino }}
     </div>
-    <div class="col-md-8">
-        <h3></h3>
-        <hr>
-        <p></p>
-    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <app-house-card [item]="item" [idx]="i" *ngFor="let item of houses; let i = index" ></app-house-card>
 </div>
