@@ -10,5 +10,5 @@
 </div>
 
 <div class="card-columns">
-  <app-house-card [item]="item" [idx]="i" *ngFor="let item of houses; let i = index" ></app-house-card>
+  <app-house-card [item]="item" [idx]="item.idx" *ngFor="let item of houses" ></app-house-card>
 </div>

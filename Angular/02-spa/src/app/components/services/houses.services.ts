@@ -88,10 +88,16 @@ export class HousesService {
       termino = termino.toLowerCase();
 
       // tslint:disable-next-line: prefer-const
-      for ( let house of this.houses ){
+      // tslint:disable-next-line: prefer-for-of
+      for ( let i = 0; i < this.houses.length; i++ ){
+        // tslint:disable-next-line: prefer-const
+
+        // tslint:disable-next-line: prefer-const
+        let house = this.houses[i];
         // tslint:disable-next-line: prefer-const
         let name = house.house.toLowerCase();
         if ( name.indexOf( termino ) >= 0){
+          house.idx = i;
           houseArr.push( house );
         }
 
@@ -105,4 +111,5 @@ export interface Houses{
   img: string;
   founder: string;
   bio: string;
+  idx?: number;
 }
