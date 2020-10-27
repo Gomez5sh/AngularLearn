@@ -1,0 +1,61 @@
+<div class="container">
+<h1 class="mt-3">Pipes <small>Angular</small></h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Variable</th>
+                    <th>Pipe</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ name  }}</td>
+                    <td>uppercase</td>
+                    <td>{{name | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{ name  }}</td>
+                    <td>lowercase</td>
+                    <td>{{ name | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{ name  }}</td>
+                    <td>slice:3</td>
+                    <td>{{ name | slice:3 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ name  }}</td>
+                    <td>slice:0:3</td>
+                    <td>{{ name | slice:0:3 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ arr  }}</td>
+                    <td>slice:2:8</td>
+                    <td>{{ arr | slice:2:8 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ PI  }}</td>
+                    <td>number</td>
+                    <td>{{ PI | number:'1.0-0'  }}</td>
+                </tr>
+                <tr>
+                    <td>{{ PI  }}</td>
+                    <td>number</td>
+                    <td>{{ PI | number:'.0-2'  }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+ <h4>Slice</h4>
+    <table>
+        <ul>
+            <li *ngFor="let item of arr | slice:5:20 ">{{item}}</li>
+        </ul>
+    </table>
+</div>
