@@ -14,6 +14,16 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>{{ name2  }}</td>
+                    <td>capitalize</td>
+                    <td>{{name2 | capitalize }}</td>
+                </tr>
+                <tr>
+                    <td>{{ name2  }}</td>
+                    <td>capitalize:false</td>
+                    <td>{{name2 | capitalize:false }}</td>
+                </tr>
+                <tr>
                     <td>{{ name  }}</td>
                     <td>uppercase</td>
                     <td>{{name | uppercase}}</td>
@@ -45,17 +55,110 @@
                 </tr>
                 <tr>
                     <td>{{ PI  }}</td>
-                    <td>number</td>
+                    <td>number:'.0-2'</td>
                     <td>{{ PI | number:'.0-2'  }}</td>
+                </tr>
+                <tr>
+                    <td>{{ percentage  }}</td>
+                    <td>percent</td>
+                    <td>{{ percentage | percent  }}</td>
+                </tr>
+                <tr>
+                    <td>{{ percentage  }}</td>
+                    <td>percent:'2.2-2'</td>
+                    <td>{{ percentage | percent:'2.2-2'  }}</td>
+                </tr>
+                <tr>
+                    <td>{{ pay  }}</td>
+                    <td>currency</td>
+                    <td>{{ pay | currency }}</td>
+                </tr>
+                <tr>
+                    <td>{{ pay  }}</td>
+                    <td>currency:'EUR'</td>
+                    <td>{{ pay | currency:'EUR' }}</td>
+                </tr>
+                <tr>
+                    <td>{{ pay  }}</td>
+                    <td>currency:'CAD ':'symbol':'.0-0'</td>
+                    <td>{{ pay | currency:'CAD$ ':'symbol':'.0-0' }}</td>
+                </tr>
+                <tr>
+                    <td>{{ promiseValue  }}</td>
+                    <td>async</td>
+                    <td>{{ promiseValue | async }}</td>
+                </tr>
+                <tr>
+                    <td>{{ date  }}</td>
+                    <td>date</td>
+                    <td>{{ date | date }}</td>
+                </tr>
+                <tr>
+                    <td>{{ date  }}</td>
+                    <td>date:'medium'</td>
+                    <td>{{ date | date:'medium' }}</td>
+                </tr>
+                <tr>
+                    <td>{{ date  }}</td>
+                    <td>date:'short'</td>
+                    <td>{{ date | date:'short' }}</td>
+                </tr>
+                <tr>
+                    <td>{{ date  }}</td>
+                    <td>date:'MMMM - dd'</td>
+                    <td>{{ date | date:'MMMM - dd' }}</td>
+                </tr>
+                <tr>
+                    <td>{{ date  }}</td>
+                    <td>date:'MMMM - dd':'':'es'</td>
+                    <td>{{ date | date:'MMMM - dd' }}</td>
+                </tr>
+                <tr>
+                    <td>{{ name  }}</td>
+                    <td>
+                        password:{{ activate }}
+                        <hr>
+                        <button
+                            (click)="activate = !activate"
+                            class="btn btn-outline-primary">
+                            Activate / Disable
+                        </button>
+                    </td>
+                    <td>{{ name | password:activate }}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+  </div>
 </div>
- <h4>Slice</h4>
-    <table>
-        <ul>
-            <li *ngFor="let item of arr | slice:5:20 ">{{item}}</li>
-        </ul>
-    </table>
+
+<h3>Slice <small>Slice:'2-10'</small></h3>
+<hr>
+<ul class="list-groyp">
+    <li *ngFor="let item of arr2 | slice:'2:10'" class="list-group-item">{{item}}</li>
+</ul>
+
+<h3>JSON</h3>
+<hr>
+<div class="row mb-5">
+    <div class="col">
+        <pre>
+        {{ obj | json  }}
+        </pre>
+    </div>
+</div>
+
+<h3 class="mt-4">SecureDOM </h3>
+<hr>
+<div class="row mb-5">
+    <div class="col">
+        <iframe
+            width="560"
+            height="315"
+            [src]="videoUrl | securedom "
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
 </div>
