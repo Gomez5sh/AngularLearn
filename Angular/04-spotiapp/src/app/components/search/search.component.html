@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col">
+        <input #termino tyoe="text" (keyup)="search(termino.value)" class="form-control" placeholder="Search Artist">
+    </div>
+</div>
+
+<div class="card-columns m-5">
+    <div class="card" *ngFor="let i of artist">
+      <img [src]="i.images | noimage" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ i.name }}</h5>
+        <p class="card-text"><span class="badge badge-pill badge-success" *ngFor="let art of i.artists">{{ art.name }}</span></p>
+      </div>
+</div>
